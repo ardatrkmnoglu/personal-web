@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  font: inherit;
+  text-align: inherit;
+}
+
+body {
+  background-image: url("pattern0.jpg");
+  background-repeat: repeat;
+  margin: 1em 3em;
+  font-family: "STIX Two Text", georgia
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+  font-weight: bold; text-align: center;
+}
+
+header {
+  .contact {
+    display: flex;
+    flex-direction: column; align-items: center;
+
+    .row {
+      display: flex;
+      flex-direction: row; gap: 0.25em;
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column; gap: 1em;
+}
+
+h2 {
+  font-size: 1.375em;
+  margin: 0 0 0.25em; padding: 0 0.25em;
+  border-bottom: 0.0625em solid black;
+  font-variant: small-caps; font-weight: 600;
+}
+
+h3 {
+  font-size: 1.125em;
+  margin: 0;
+  font-style: italic; font-weight: 500;
+}
+
+ul { margin: 0 }
+
+p {
+  margin: 0;
+  text-align: justify;
+  text-indent: 2em;
+}
+
+i { font-style: italic }
+
+#education {
+  ul {
+    display: flex;
+    padding: 0;
+    flex-direction: column; gap: 0.75em;
+    list-style: none;
+
+    li > div {
+      display: flex;
+      justify-content: space-between;
+      font-style: italic;
+    }
+  }
+}
+
+a:any-link {
+  color: blue;
+}
+
+#voluntary-work {
+  li { text-align: justify }
+  b { font-weight: 600 }
+}
+
+#skills {
+  .categories {
+    display: flex;
+    flex-direction: column; gap: 0.5em;
+
+    .category {
+      align-items: center; flex-wrap: wrap; gap: 0 0.25em;
+
+      span:not(:last-of-type)::after { content: ',' }
+    }
+  }
+}
+
+footer { margin-top: 4em }
+
+@media print {
+  footer { display: none }
+}
