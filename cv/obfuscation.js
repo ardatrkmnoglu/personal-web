@@ -32,7 +32,7 @@ addEventListener("keydown", function (event) {
     if (event.shiftKey) {
         deobfusticate();
     }
-    if (event.ctrlKey && (event.key === 'p' || event.key === 'P')) {
+    if ((event.ctrlKey || event.metaKey) && (event.key === 'p' || event.key === 'P')) {
         deobfusticate();
     }
 })
