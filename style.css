@@ -1,96 +1,121 @@
 body {
-    margin: 0;
+  margin: 0;
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    color: midnightblue;
-    margin-top: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  color: midnightblue;
+  margin-top: 0;
 }
 
 .main-container {
-    margin: 8px;
-    min-height: 75vh;
+  margin: 8px;
+  min-height: 75vh;
 }
 
 .standart {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .logo {
-    max-height: 75px;
+  max-height: 75px;
 }
 
 .navbar {
-    text-align: left;
-    margin-bottom: 0;
-    max-height: 120px;
+  text-align: left;
+  margin-bottom: 0;
+  max-height: 120px;
 }
 
 .navbar ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 10px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a,
 .navbar p {
-    color: #000000;
-    text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    display: block;
-    border-radius: 10px;
-    text-align: center;
-    padding: 15px;
-    width: auto;
-    transition: background-color 0.3s ease;
+  color: #000000;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  width: auto;
+  transition: background-color 0.3s ease;
 }
 
 .navbar a:hover {
-    background-color: #4040407e;
+  background-color: #4040407e;
 }
 
 .navbar li {
-    float: none;
-    text-align: left;
+  float: none;
+  text-align: left;
+}
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.music {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 15px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.music iframe {
+  width: 100% !important;
+  border: none;
 }
 
 footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: hsla(0, 0%, 100%, 0.4);
-    backdrop-filter: blur(2px);
-    min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: hsla(0, 0%, 100%, 0.4);
+  backdrop-filter: blur(2px);
+  min-height: 100px;
 }
 
 footer img {
-    max-height: 95px;
-    margin-left: 5px;
-    margin-right: 15px;
+  max-height: 95px;
+  margin-left: 5px;
+  margin-right: 15px;
 }
 
 .footer-links {
-    margin: 0;
-    margin-left: auto;
-    margin-right: 20px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .footer-links a {
-    color: rgb(60, 150, 150);
+  color: rgb(60, 150, 150);
 }
 
 #game-of-life {
-  width: max(100%, 100dvw); height: max(100%, 100dvh);
-  min-width: 0; min-height: 0;
+  width: max(100%, 100dvw);
+  height: max(100%, 100dvh);
+  min-width: 0;
+  min-height: 0;
   position: absolute;
-  z-index: -1; opacity: 0.075;
+  z-index: -1;
+  opacity: 0.075;
 }
