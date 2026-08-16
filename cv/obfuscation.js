@@ -4,7 +4,7 @@ const obfuscationTable = {
   '[dot]': '.', '[at]': '@', ' ': ''
 };
 
-function deobfusticate() {
+function deobfuscate() {
   const elems = document.getElementsByClassName('obfusticated');
 
   for (const elem of elems) {
@@ -30,9 +30,25 @@ function deobfusticate() {
 
 addEventListener("keydown", function (event) {
     if (event.shiftKey) {
-        deobfusticate();
+        deobfuscate();
     }
     if ((event.ctrlKey || event.metaKey) && (event.key === 'p' || event.key === 'P')) {
-        deobfusticate();
+        deobfuscate();
     }
 })
+
+window.onbeforeprint = () => {
+    window.deobfuscate();
+    const e = document.querySelectorAll("input");
+    for (let t of e) {
+        let e = t.value;
+        const n = t.parentElement
+          , o = document.createElement("a");
+        o.innerText = e,
+        e = e.replaceAll(" ", ""),
+        t.classList.contains("email") && (o.href = "mailto:" + e),
+        t.classList.contains("phone") && (o.href = "tel:" + e),
+        n.insertBefore(o, t),
+        t.remove()
+    }
+};
