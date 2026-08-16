@@ -58,6 +58,12 @@ p {
 i { font-style: italic }
 
 #education {
+  img {
+    height: 1em;
+    width: auto;
+    vertical-align: top;
+    margin-right: 7.5px;
+  }
   ul {
     display: flex;
     padding: 0;
@@ -69,6 +75,8 @@ i { font-style: italic }
       justify-content: space-between;
       font-style: italic;
     }
+    b { font-weight: 600 }
+    code { font-family: monospace; }
   }
 }
 

@@ -55,10 +55,10 @@
       <h2>Summary</h2>
       <div>
         <p>
-          Process-driven, multidisciplinary systems &amp; control engineer focused on
-          computer vision and low-level programming.
-          Passionate about system architecture, digital/logic design,
-          embedded systems, computer vision, and machine learning.
+          Process-driven, multidisciplinary systems &amp; software engineer focused on
+          low-level programming and system architectures.
+          Passionate about embedded systems, digital design, and building fault-tolerant
+          frameworks, with a strong secondary interest in computer vision and machine learning.
         </p>
       </div>
     </section>
@@ -68,22 +68,33 @@
       <div id="education">
         <ul>
           <li>
-            <h3>Istanbul Technical University</h3>
+            <h3><img src="img/itu.png">Istanbul Technical University</h3>
             <div>
-              <span>Bachelor of Computer Engineering &ndash; CGPA: 3.45</span>
+              <span>Bachelor of Computer Engineering &ndash; CGPA: 3.30</span>
               <span>October 2023 &ndash; June 2028</span>
             </div>
           </li>
 
           <li>
-            <h3>HAVELSAN</h3>
+            <h3><img src="img/havelsan.png">HAVELSAN</h3>
             <div>
-              <span>(Incoming) Middleware Software Engineering Intern</span>
+              <span>Middleware Software Engineering Intern</span>
               <span>July 2026 &ndash; August 2026</span>
             </div>
             <p>
-              Set to contribute to the development and integration of software solutions that bridge
-              autonomous systems and platform management technologies within the Middleware Software Team.
+              &bull; <b>Embedded GUI Architecture</b>: Designed a high-performance, zero-widget Primary Flight Display (PFD)
+              with LVGL by entirely bypassing standard widgets using direct drawing calls, custom 2D rotation, and clipping masks
+              for zero-overhead flight telemetry rendering.
+            </p>
+            <p>
+              &bull; <b>Safety-Critical Graphics Verification</b>: Developed a comprehensive robustness testing framework for
+              OpenGL SC 2.0 drivers with process isolation techniques to validate deterministic error handling against driver
+              vulnerabilities, memory limits, and sentinel values.
+            </p>
+            <p>
+              &bull; <b>Systems Programming & Fault Containment</b>: Engineered a fault-tolerant execution architecture using
+              POSIX process management (<code>fork</code>, <code>waitpid</code>) to isolate OpenGL memory corruptions and capture
+              fatal driver crashes such as <code>SIGSEGV</code> or <code>SIGABRT</code> without halting the main test suite.
             </p>
           </li>
 
@@ -107,7 +118,7 @@
             various organizations &amp; events.
           </li>
           <li>
-            Also volunteered under the guidance of Assist. Prof. Dr. Yavuz Köroğlu, actively
+            Also volunteered under the guidance of Asst. Prof. Dr. Yavuz Köroğlu, actively
             participated in advanced logic design and engaged in hardware design implementations.
           </li>
         </ul>
@@ -143,6 +154,17 @@
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
+          </p>
+        </div>
+
+        <div class="category">
+          <h3>Libraries &amp; Frameworks</h3>
+          <p>
+            <span>OpenGL</span>
+            <span>GLSL</span>
+            <span>LVGL</span>
+            <span>X11 / Xlib</span>
+            <span>SDL2</span>
           </p>
         </div>
 
@@ -220,6 +242,19 @@
       <div>
         <ul>
           <li>
+            <a href="https://github.com/ardatrkmnoglu/lvgl-pfd">lvgl-pfd</a>
+            <i>stable work, completed within the internship process</i>:
+            An open-source reference implementation of a Boeing-style PFD designed using LVGL's low-level APIs,
+            providing a modular, bare-metal rendering pipeline tailored specifically for embedded avionics hardware.
+          </li>
+          </li>
+          <li>
+            <a href="https://github.com/ardatrkmnoglu/opengl-collab-tests">opengl-collab-tests</a>
+            <i>stable work, completed within the internship process</i>:
+            A collaborative API conformance and robustness/edge-case test suite for OpenGL SC 2.0 drivers, employing
+            POSIX process isolation techniques to validate driver determinism and fault recovery under extreme scenarios.
+          </li>
+          <li>
             <a href="https://github.com/ardatrkmnoglu/ardonium-os">ardonium-os</a>
             <i>work in progress</i>:
             A custom operating system kernel and bootloader written in x86 Assembly from scratch,
@@ -234,7 +269,7 @@
           <li>
             <a href="https://ardatrkmnoglu.github.io/lawyer-finder">lawyer-finder</a>
             <i>stable work, domain ownership and registration in progress</i>:
-            A website for finding lawyer suites online. This website interpretes the
+            A website for finding lawyer suites online. This website interprets the
             law firms &amp; standalone lawyers in terms of name, city, or category.
           </li>
         </ul>
@@ -243,7 +278,7 @@
   </main>
 
   <footer>
-    last update: 16-06-2026
+    last update: 16-08-2026
   </footer>
 
   <script src="obfuscation.js"></script>
