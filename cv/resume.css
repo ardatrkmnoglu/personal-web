@@ -84,7 +84,7 @@ a:any-link {
   color: blue;
 }
 
-#voluntary-work {
+#voluntary-work, #references {
   li { text-align: justify }
   b { font-weight: 600 }
 }

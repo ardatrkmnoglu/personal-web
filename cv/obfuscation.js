@@ -32,9 +32,6 @@ addEventListener("keydown", function (event) {
     if (event.shiftKey) {
         deobfuscate();
     }
-    if ((event.ctrlKey || event.metaKey) && (event.key === 'p' || event.key === 'P')) {
-        deobfuscate();
-    }
 })
 
 window.onbeforeprint = () => {
@@ -42,8 +39,7 @@ window.onbeforeprint = () => {
     const e = document.querySelectorAll("input");
     for (let t of e) {
         let e = t.value;
-        const n = t.parentElement
-          , o = document.createElement("a");
+        const n = t.parentElement, o = document.createElement("a");
         o.innerText = e,
         e = e.replaceAll(" ", ""),
         t.classList.contains("email") && (o.href = "mailto:" + e),

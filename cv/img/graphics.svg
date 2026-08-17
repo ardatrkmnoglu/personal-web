@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Monitör Çerçevesi -->
+  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+  <!-- Monitör Standı -->
+  <line x1="8" y1="21" x2="16" y2="21"></line>
+  <line x1="12" y1="17" x2="12" y2="21"></line>
+  <!-- Grafik / 3D Render Temsili (Üçgen) -->
+  <polygon points="12,6 17,14 7,14"></polygon>
+</svg>
