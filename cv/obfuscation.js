@@ -4,47 +4,52 @@ const obfuscationTable = {
   '[dot]': '.', '[at]': '@', ' ': ''
 };
 
+let isObfuscated = 1;
+
 function deobfuscate() {
-  const elems = document.getElementsByClassName('obfusticated');
+  if (isObfuscated) {
+    const elems = document.getElementsByClassName('obfuscated');
 
-  for (const elem of elems) {
-    let text = elem.innerText;
+    for (const elem of elems) {
+      let text = elem.innerText;
 
-    for (const [k, v] of Object.entries(obfuscationTable))
-      text = text.replaceAll(k, v);
+      for (const [k, v] of Object.entries(obfuscationTable))
+        text = text.replaceAll(k, v);
 
-    let href = text.replaceAll(',', '');
+      let href = text.replaceAll(',', '');
 
-    if (elem.classList.contains('tel'))
-      href = 'tel:' + href;
+      if (elem.classList.contains('tel'))
+        href = 'tel:' + href;
 
-    if (elem.classList.contains('email'))
-      href = 'mailto:' + href;
+      if (elem.classList.contains('email'))
+        href = 'mailto:' + href;
 
-    text = text.replaceAll(',', ' ');
+      text = text.replaceAll(',', ' ');
 
-    elem.innerText = text;
-    elem.href = href;
+      elem.innerText = text;
+      elem.href = href;
+    }
+    isObfuscated = 0;
   }
 }
 
-addEventListener("keydown", function (event) {
-    if (event.shiftKey) {
-        deobfuscate();
-    }
+addEventListener("keydown", function(event) {
+  if (event.shiftKey) {
+    deobfuscate();
+  }
 })
 
 window.onbeforeprint = () => {
-    window.deobfuscate();
-    const e = document.querySelectorAll("input");
-    for (let t of e) {
-        let e = t.value;
-        const n = t.parentElement, o = document.createElement("a");
-        o.innerText = e,
-        e = e.replaceAll(" ", ""),
-        t.classList.contains("email") && (o.href = "mailto:" + e),
-        t.classList.contains("phone") && (o.href = "tel:" + e),
-        n.insertBefore(o, t),
-        t.remove()
-    }
+  window.deobfuscate();
+  const e = document.querySelectorAll("input");
+  for (let t of e) {
+    let e = t.value;
+    const n = t.parentElement, o = document.createElement("a");
+    o.innerText = e,
+      e = e.replaceAll(" ", ""),
+      t.classList.contains("email") && (o.href = "mailto:" + e),
+      t.classList.contains("phone") && (o.href = "tel:" + e),
+      n.insertBefore(o, t),
+      t.remove()
+  }
 };
