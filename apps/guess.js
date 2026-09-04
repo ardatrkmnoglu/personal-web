@@ -9,30 +9,38 @@ let guess;
 let running = true;
 
 while (running) {
-    guess = window.prompt(`Guess a number between ${minNum} and ${maxNum}`);
-    guess = Number(guess);
+  guess = window.prompt(`Guess a number between ${minNum} and ${maxNum}`);
+  guess = Number(guess);
 
-    if (isNaN(guess)) {
-        window.alert("Please enter a number");
+  if (guess == "") {
+    running = false;
+    attemptCount.textContent = attempts;
+    answer.textContent = (`${randomNum} (You lost!)`);
+    answerHeader.textContent = (`The answer was: ${answer.textContent}`)
+    break;
+  }
+
+  if (isNaN(guess)) {
+    window.alert("Please enter a number");
+  }
+
+  if (guess < minNum || guess > maxNum) {
+    window.alert("Please enter a valid number");
+  }
+  else {
+    if (guess < randomNum) {
+      window.alert("Too low!");
     }
-
-    if (guess < minNum || guess > maxNum) {
-        window.alert("Please enter a valid number");
+    else if (guess > randomNum) {
+      window.alert("Too big!");
     }
     else {
-        if (guess < randomNum) {
-            window.alert("Too low!");
-        }
-        else if (guess > randomNum) {
-            window.alert("Too big!");
-        }
-        else {
-            window.alert(`You won! The answer is ${randomNum}. Attempts: ${attempts}`);
-            running = false;
-            attemptCount.textContent = attempts;
-            answer.textContent = randomNum;
-        }
-        attempts++;
+      window.alert(`You won! The answer is ${randomNum}. Attempts: ${attempts}`);
+      running = false;
+      attemptCount.textContent = attempts;
+      answer.textContent = randomNum;
     }
+    attempts++;
+  }
 }
 
