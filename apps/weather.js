@@ -25,7 +25,7 @@ weatherForm.addEventListener("submit", async event => {
 
 async function getWeatherData(city) {
 
-  const apiUrl = `https://weather.arda-t-rkmeno-lu-87b.workers.dev/?city=${city}`;
+  const apiUrl = `https://api.ardatrkmnoglu.com/?city=${city}`;
 
   const response = await fetch(apiUrl);
 
